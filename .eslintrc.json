@@ -1,0 +1,15 @@
+{
+  "extends": ["../../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": ["./tsconfig.*?.json"]
+      },
+      "rules": {
+        "@typescript-eslint/naming-convention": "off"
+      }
+    }
+  ]
+}

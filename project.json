@@ -1,0 +1,34 @@
+{
+  "root": "libs/tiptaptop/extension-mention",
+  "sourceRoot": "libs/tiptaptop/extension-mention/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/workspace:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/tiptaptop/extension-mention",
+        "main": "libs/tiptaptop/extension-mention/src/index.ts",
+        "tsConfig": "libs/tiptaptop/extension-mention/tsconfig.lib.json",
+        "packageJson": "libs/tiptaptop/extension-mention/package.json",
+        "assets": ["libs/tiptaptop/extension-mention/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/tiptaptop/extension-mention/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/tiptaptop/extension-mention"],
+      "options": {
+        "jestConfig": "libs/tiptaptop/extension-mention/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:shared"]
+}
